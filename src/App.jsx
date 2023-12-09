@@ -3,8 +3,8 @@ import Header from "./components/Header.jsx";
 function App() {
 
   return (
-    <div>
-        <Header/>
+    <div className={'relative'}>
+        <Header className={'h-[10vw]'}/>
     </div>
   )
 }

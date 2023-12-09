@@ -1,4 +1,3 @@
-import VipIcon from "../assets/vip.svg"
 export const headerleft = [
     {
         id: 1,
@@ -24,42 +23,51 @@ export const headerleft = [
         id: 6,
         title: "赛事"
     },
+    {
+        id: 7,
+        title: "这一年"
+    },
+    {
+        id: 8,
+        title: "下载客户端",
+        icon: 'DownloadIcon'
+    },
 ]
 
 export const headerright = [
     {
         id: 1,
         title: "大会员",
-        icon: VipIcon
+        icon: 'VipIcon'
     },
     {
         id: 2,
         title: "消息",
-        icon: VipIcon
+        icon: 'MessageIcon'
     },
     {
         id: 3,
         title: "动态",
-        icon: VipIcon
+        icon: 'DynamicIcon'
     },
     {
         id: 4,
         title: "收藏",
-        icon: VipIcon
+        icon: 'StarIcon'
     },
     {
         id: 5,
         title: "历史",
-        icon: VipIcon
+        icon: 'HistoryIcon'
     },
     {
         id: 6,
         title: "创作中心",
-        icon: VipIcon
+        icon: 'LightBulbIcon'
     },
     {
         id: 7,
         title: "投稿",
-        icon: VipIcon
+        icon: 'UploadSubmissionIcon'
     },
 ]

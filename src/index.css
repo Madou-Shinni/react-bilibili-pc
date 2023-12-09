@@ -140,3 +140,24 @@
   background: rgba(255, 255, 255, 0.6);
   filter: blur(750px);
 }
+
+body {
+    overflow: auto;
+}
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, cite, code, del, dfn, em, img, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, button, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: inherit;
+    font-size: 100%;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.25;
+}
+
+a {
+    text-decoration: none; /* 去除默认的下划线 */
+    outline: none; /* 去除旧版浏览器的点击后的外虚线框 */
+    color: #000; /* 去除默认的颜色和点击后变化的颜色 */
+}
