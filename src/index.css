@@ -42,6 +42,14 @@ var --layout
     max-width: calc(1980px + 2 * var(--layout-padding));
 }
 
+.main-pd {
+    padding: 0 var(--layout-padding);
+}
+
+.margin-auto {
+    margin: 0 auto;
+}
+
 * {
   scroll-behavior: smooth;
 }

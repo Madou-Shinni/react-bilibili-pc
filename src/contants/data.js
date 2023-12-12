@@ -148,3 +148,15 @@ export const mainNavbarRight = [
         icon: 'AcademicCapIcon'
     },
 ]
+export const mainBody = [
+
+]
+
+// 使用 for 循环填充数据
+for (let i = 0; i < 20; i++) {
+    mainBody.push({
+        id: i + 1, // Assuming ids start from 1
+        title: `Item ${i + 1}`,
+        img: `image-${i + 1}.jpg`, // Replace with your image source logic
+    });
+}
