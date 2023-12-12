@@ -4,7 +4,7 @@ import {mainNavbarMid, mainNavbarRight} from "../contants/data.js";
 
 const MainNavbar = () => {
     return <div className={`flex items-center my-0 mx-auto 
-    md:mx-[20px] max-w-[2560px] w-full h-[140px] md:h-[100px] px-[140px]
+    md:mx-[20px] max-width w-full h-[140px] md:h-[100px] px-[140px]
     md:px-[24px] md:w-[1180px]
     `}>
         {/*left*/}
