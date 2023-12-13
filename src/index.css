@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-var --layout
-
 :root {
   --black-gradient: linear-gradient(
           144.39deg,
@@ -27,7 +25,7 @@ var --layout
     min-height: calc(var(--title-line-height) * 2 + var(--subtitle-line-height) + 4px);
 }
 
-@media (min-width: 1140px) and (max-width: 1299.9px) {
+@media (max-width: 1399px) {
     :root {
         --layout-padding: 60px
     }
@@ -35,7 +33,7 @@ var --layout
 
 @media (min-width: 1400px) and (max-width: 1559.9px) {
     :root {
-        --layout-padding: 60px
+        --layout-padding: 130px
     }
 }
 
@@ -194,6 +192,7 @@ var --layout
 
 body {
     overflow-x: auto;
+    box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, cite, code, del, dfn, em, img, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, button, table, caption, tbody, tfoot, thead, tr, th, td {
@@ -211,4 +210,8 @@ a {
     text-decoration: none; /* 去除默认的下划线 */
     outline: none; /* 去除旧版浏览器的点击后的外虚线框 */
     color: #000; /* 去除默认的颜色和点击后变化的颜色 */
+}
+
+body span, body svg {
+    color: inherit;
 }

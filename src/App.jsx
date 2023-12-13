@@ -1,14 +1,12 @@
 import Header from "./components/Header.jsx";
-import MainNavbar from "./components/MainNavbar.jsx";
-import MainBody from "./components/MainBody.jsx";
+import Main from "./components/Main.jsx";
 
 function App() {
 
   return (
     <div className={'relative'}>
         <Header className={'h-[10vw]'}/>
-        <MainNavbar/>
-        <MainBody/>
+        <Main/>
     </div>
   )
 }

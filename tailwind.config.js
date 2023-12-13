@@ -7,13 +7,13 @@ export default {
   theme: {
     extend: {},
     screens: {
-      'md': {'max': '1403px'},
+      'md': {'max': '1399px'},
       // => @media (min-width: 768px and max-width: 1023px) { ... }
 
-      'lg': {'min': '1404px', 'max': '1979px'},
+      'lg': {'min': '1400px', 'max': '2060.9px'},
       // => @media (min-width: 1024px and max-width: 1279px) { ... }
 
-      '2xl': {'min': '1980px'},
+      '2xl': {'min': '2061px'},
     },
   },
   plugins: [],

@@ -3,9 +3,7 @@ import DynamicImg from '../assets/667cb1473c000e6188eccceb42118365ad265bb4.jpg'
 import {mainNavbarMid, mainNavbarRight} from "../contants/data.js";
 
 const MainNavbar = () => {
-    return <div className={`flex items-center my-0 mx-auto 
-    md:mx-[20px] max-width w-full h-[140px] md:h-[100px] px-[140px]
-    md:px-[24px] md:w-[1180px]
+    return <div className={`flex items-center my-0 w-full h-[140px]
     `}>
         {/*left*/}
         <div className={'flex items-center'}>
@@ -28,8 +26,8 @@ const MainNavbar = () => {
             grid-flow-col gap-[10px] w-full pr-[20px] border-solid border-r-[1px] border-[#e3e5e7]
             `}>
                 {mainNavbarMid.map((item, index) => (
-                    <a href={'#'} className={`md:h-[26px] md:leading-[26px]
-                        h-[30px] leading-[30px] inline-block w-full rounded-[6px] border-[1px]
+                    <a href={'#'} className={`h-[30px] leading-[30px] inline-block 
+                        w-full rounded-[6px] border-[1px] md:h-[26px] md:leading-[26px]
                         border-[#f1f2f3] tracking-[2px] box-content ${index > 17 && 'md:hidden'}
                         bg-[#f6f7f8] text-center font-normal text-[16px] md:text-[13px] text-[#61666d]`}>
                         {item}
