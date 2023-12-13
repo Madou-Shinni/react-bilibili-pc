@@ -157,6 +157,7 @@ for (let i = 0; i < 20; i++) {
     mainBody.push({
         id: i + 1, // Assuming ids start from 1
         title: `Item ${i + 1}`,
-        img: `image-${i + 1}.jpg`, // Replace with your image source logic
+        img: `https://i1.hdslb.com/bfs/live/new_room_cover/ce7839548f75c83cc1366bed5889f541d9f3156e.jpg@672w_378h_1c.avif`, // Replace with your image source logic
+        icon: 'UPIcon'
     });
 }

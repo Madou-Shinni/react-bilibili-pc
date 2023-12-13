@@ -7,6 +7,7 @@ import TVIcon from './tv.svg?react'
 import DownloadIcon from './download.svg?react'
 import UploadSubmissionIcon from './upload-submission.svg?react'
 import FireIcon from './fire.svg?react'
+import UPIcon from './up.svg?react'
 
 
-export {VipIcon,DynamicIcon,MessageIcon,HistoryIcon,CollectionIcon,TVIcon,DownloadIcon,UploadSubmissionIcon,FireIcon}
+export {VipIcon,DynamicIcon,MessageIcon,HistoryIcon,CollectionIcon,TVIcon,DownloadIcon,UploadSubmissionIcon,FireIcon,UPIcon}
