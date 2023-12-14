@@ -190,6 +190,14 @@
   filter: blur(750px);
 }
 
+.absolute-full {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
 body {
     overflow-x: auto;
     box-sizing: border-box;

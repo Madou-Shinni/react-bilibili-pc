@@ -1,16 +1,27 @@
-import {mainBody} from "../contants/data.js";
+import {mainBody, swipers} from "../contants/data.js";
 import Img1 from '../assets/ce7839548f75c83cc1366bed5889f541d9f3156e.jpg@672w_378h_1c.avif'
 import SwiperCover from '../assets/swiper-cover.avif'
 import DynamicHeroIcon from "./Icon.jsx";
+import {Swiper, SwiperSlide} from "swiper/react";
+import 'swiper/css';
 
 const MainBody = () => {
     return <main className={'block box-border relative'}>
         {/* 内容区 */}
         <div className={`grid grid-cols-5 md:grid-cols-4 gap-[20px] box-border`}>
             {/* 轮播 视频 */}
+            <div className={'col-span-2 row-span-2'}>
+                <Swiper spaceBetween={10} slidesPerView={"auto"} className={'rounded-[8px]'}>
+                    {swipers.map((item,index)=>(
+                        <SwiperSlide key={item.id}>
+                           <img src={SwiperCover} alt={item.title} className={'w-full h-full object-cover rounded-[8px]'}/>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div>
             {
                 mainBody.map((item, index) => (
-                    index === 0 ? <SwiperWrapper className={'w-full col-span-2 row-span-2'}/> : <BodyContent icon={item.icon}/>
+                    <BodyContent key={item.id} icon={item.icon}/>
                 ))
             }
             {/* 换一批 */}
@@ -28,6 +39,14 @@ export default MainBody
 
 const SwiperWrapper = (props) => {
     return <div className={`${props.className}`}>
+        <Swiper
+            spaceBetween={50}
+            slidesPerView={3}
+            onSlideChange={() => console.log('slide change')}
+            onSwiper={(swiper) => console.log(swiper)}
+        >
+            <SwiperSlide></SwiperSlide>
+        </Swiper>
         <img src={SwiperCover} alt="" className={'rounded-[6px] object-cover w-full h-full'}/>
     </div>
 }
@@ -51,5 +70,6 @@ const BodyContent = (props) => {
                 </a>
             </div>
         </div>
+
     </div>
 }

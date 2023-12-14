@@ -26,7 +26,7 @@ const MainNavbar = () => {
             grid-flow-col gap-[10px] w-full pr-[20px] border-solid border-r-[1px] border-[#e3e5e7]
             `}>
                 {mainNavbarMid.map((item, index) => (
-                    <a href={'#'} className={`h-[30px] leading-[30px] inline-block 
+                    <a href={'#'} key={index} className={`h-[30px] leading-[30px] inline-block 
                         w-full rounded-[6px] border-[1px] md:h-[26px] md:leading-[26px]
                         border-[#f1f2f3] tracking-[2px] box-content ${index > 17 && 'md:hidden'}
                         bg-[#f6f7f8] text-center font-normal text-[16px] md:text-[13px] text-[#61666d]`}>
@@ -37,7 +37,7 @@ const MainNavbar = () => {
             {/* right */}
             <div className={'grid grid-rows-[repeat(2,1fr)] gap-y-[10px] grid-flow-col w-[240px] shrink-0'}>
                 {mainNavbarRight.map((item, index) => (
-                    <a href={'#'} className={`flex items-center justify-end text-[16px]  font-normal md:text-[13px] text-[#61666d]`}>
+                    <a href={'#'} key={item.id} className={`flex items-center justify-end text-[16px]  font-normal md:text-[13px] text-[#61666d]`}>
                         <DynamicHeroIcon icon={item.icon}/>
                         <span>{item.title}</span>
                     </a>

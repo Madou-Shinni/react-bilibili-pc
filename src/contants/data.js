@@ -148,9 +148,8 @@ export const mainNavbarRight = [
         icon: 'AcademicCapIcon'
     },
 ]
-export const mainBody = [
-
-]
+export const mainBody = []
+export const swipers = []
 
 // 使用 for 循环填充数据
 for (let i = 0; i < 20; i++) {
@@ -160,4 +159,12 @@ for (let i = 0; i < 20; i++) {
         img: `https://i1.hdslb.com/bfs/live/new_room_cover/ce7839548f75c83cc1366bed5889f541d9f3156e.jpg@672w_378h_1c.avif`, // Replace with your image source logic
         icon: 'UPIcon'
     });
+}
+
+for (let i = 0; i < 5; i++) {
+    swipers.push({
+        id: i+1,
+        title: "天行九歌",
+        img: '',
+    })
 }
