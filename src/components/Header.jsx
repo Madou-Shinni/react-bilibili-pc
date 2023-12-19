@@ -7,8 +7,8 @@ import DynamicHeroIcon from "./Icon.jsx";
 
 const Header = (props) => {
     return <div className={`flex relative
-    items-center leading-[64px] md:h-[85px]
-    box-border shadow max-w-[2560px] w-full ${props.className}`}>
+    items-center leading-[64px] md:h-[85px] md:w-[1180px]
+    box-border max-width shadow w-full ${props.className}`}>
         <div className={'absolute top-0 flex justify-between items-center max-w-[2560px] px-[24px] w-full'}>
             {/* 左侧导航栏 */}
             <ul className={'flex items-center shrink-[0]'}>
