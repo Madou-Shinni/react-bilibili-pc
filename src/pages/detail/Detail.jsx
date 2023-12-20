@@ -37,7 +37,7 @@ const Detail = () => {
     return <Main>
         <div className={'flex w-full h-full relative'}>
             {/* left */}
-            <div className={`default-border h-fit sticky`} style={{width:leftContainerDynamicWidth}}>
+            <div className={`default-border h-fit sticky`} style={{width: leftContainerDynamicWidth}}>
                 {/* 标题区 */}
                 <div className={'h-[104px] pt-[20px]'}>
                     <h1 className={'mb-[6px]'}>独立开发+技术博主+自由职业，普通的一天</h1>
@@ -64,7 +64,21 @@ const Detail = () => {
                 </div>
                 {/* player */}
                 <div className={'relative'} style={playerDynamicStyles}>
-
+                    <div className={'relative w-full h-full'}>
+                        {/* 播放器区域 */}
+                        <div className={'flex flex-col'}>
+                            {/* 播放器 */}
+                            <div className={'flex-1'}></div>
+                            {/* 文字 */}
+                            <div>
+                                {/* TODO:  */}
+                                <div className={'flex'}>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             {/* right */}
