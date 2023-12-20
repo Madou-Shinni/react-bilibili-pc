@@ -1,7 +1,7 @@
-import {mainBody, swipers} from "../contants/data.js";
-import Img1 from '../assets/ce7839548f75c83cc1366bed5889f541d9f3156e.jpg@672w_378h_1c.avif'
-import SwiperCover from '../assets/swiper-cover.avif'
-import DynamicHeroIcon from "./Icon.jsx";
+import {mainBody, swipers} from "@/contants/data.js";
+import Img1 from '@/assets/ce7839548f75c83cc1366bed5889f541d9f3156e.jpg@672w_378h_1c.avif'
+import SwiperCover from '@/assets/swiper-cover.avif'
+import DynamicHeroIcon from "@/components/Icon.jsx";
 import {Swiper, SwiperSlide} from "swiper/react";
 import 'swiper/css';
 

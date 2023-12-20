@@ -1,10 +1,6 @@
-import MainBody from "./MainBody.jsx";
-import MainNavbar from "./MainNavbar.jsx";
-
-const Main = () => {
+const Main = ({children}) => {
     return <div className={'max-width main-pd margin-auto md:w-[1399px]'}>
-        <MainNavbar/>
-        <MainBody/>
+        {children}
     </div>
 }
 
