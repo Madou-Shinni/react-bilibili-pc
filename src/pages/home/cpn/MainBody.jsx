@@ -3,7 +3,12 @@ import Img1 from '@/assets/ce7839548f75c83cc1366bed5889f541d9f3156e.jpg@672w_378
 import SwiperCover from '@/assets/swiper-cover.avif'
 import DynamicHeroIcon from "@/components/Icon.jsx";
 import {Swiper, SwiperSlide} from "swiper/react";
+import SwiperCore from 'swiper';
+import {Autoplay} from "swiper/modules";
 import 'swiper/css';
+
+
+SwiperCore.use([Autoplay]);
 
 const MainBody = () => {
     return <main className={'block box-border relative'}>
@@ -11,7 +16,7 @@ const MainBody = () => {
         <div className={`grid grid-cols-5 md:grid-cols-4 gap-[20px] box-border`}>
             {/* 轮播 视频 */}
             <div className={'col-span-2 row-span-2'}>
-                <Swiper spaceBetween={10} slidesPerView={"auto"} className={'rounded-[8px]'}>
+                <Swiper spaceBetween={10} slidesPerView={"auto"} autoplay className={'rounded-[8px]'}>
                     {swipers.map((item,index)=>(
                         <SwiperSlide key={item.id}>
                            <img src={SwiperCover} alt={item.title} className={'w-full h-full object-cover rounded-[8px]'}/>
