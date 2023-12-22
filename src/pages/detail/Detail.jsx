@@ -3,13 +3,14 @@ import DynamicHeroIcon from "@/components/Icon.jsx";
 import {useEffect, useState} from "react";
 
 const Detail = () => {
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-    const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth*0.6);
+    const [windowHeight, setWindowHeight] = useState(window.innerHeight*0.45);
     const leftContainerDynamicWidth = windowWidth
     const playerDynamicStyles = {
         width: windowWidth,
         height: windowHeight
     }
+    // console.log(playerDynamicStyles)
     useEffect(() => {
         // 定义一个事件处理函数，用于更新窗口大小
         const handleResize = () => {
