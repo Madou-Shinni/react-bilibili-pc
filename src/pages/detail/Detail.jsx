@@ -1,6 +1,7 @@
 import Main from "@/components/Main.jsx";
 import DynamicHeroIcon from "@/components/Icon.jsx";
 import {useEffect, useState} from "react";
+import Player from "@/components/Player.jsx";
 
 const Detail = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth*0.6);
@@ -64,12 +65,18 @@ const Detail = () => {
                     </div>
                 </div>
                 {/* player */}
-                <div className={'relative'} style={playerDynamicStyles}>
+                <div className={'relative'}>
                     <div className={'relative w-full h-full'}>
                         {/* 播放器区域 */}
                         <div className={'flex flex-col'}>
                             {/* 播放器 */}
-                            <div className={'flex-1'}></div>
+                            <div className={'flex-1'}>
+                                <Player width={'100%'} height={'100%'} />
+                            </div>
+                            {/* 播放按钮 */}
+                            <div className={`w-[64px] h-[64px] absolute right-[34px] bottom-[62px]`}>
+                                <DynamicHeroIcon icon={'PlayIcon'} width={64} height={64}/>
+                            </div>
                             {/* 文字 */}
                             <div>
                                 {/* TODO:  */}

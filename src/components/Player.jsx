@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import flvjs from 'flv.js';
 
+const videoCover = '/src/assets/swiper-cover.avif'
+
 const Player = ({ videoUrl, width, height }) => {
     const videoRef = useRef(null);
     const flvPlayerRef = useRef(null);
@@ -29,10 +31,10 @@ const Player = ({ videoUrl, width, height }) => {
 
     return (
         <video
+            className={`box-content bg-[url(${videoCover})] bg-cover`}
             ref={videoRef}
             width={width}
             height={height}
-            controls
         />
     );
 };

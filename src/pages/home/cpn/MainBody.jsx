@@ -4,7 +4,7 @@ import SwiperCover from '@/assets/swiper-cover.avif'
 import DynamicHeroIcon from "@/components/Icon.jsx";
 import {Swiper, SwiperSlide} from "swiper/react";
 import SwiperCore from 'swiper';
-import {Autoplay, Navigation, Pagination} from "swiper/modules";
+import {Autoplay} from "swiper/modules";
 import 'swiper/css';
 
 
