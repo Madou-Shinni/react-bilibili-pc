@@ -10,6 +10,12 @@ import FireIcon from './fire.svg?react'
 import UPIcon from './up.svg?react'
 import ChangeIcon from './change.svg?react'
 import PlayIcon from './play.svg?react'
+import DmCtrlIcon from './dm-ctrl.svg?react'
+import DmSettingIcon from './dm-setting.svg?react'
+import DmTextSettingIcon from './dm-text-setting.svg?react'
 
 
-export {VipIcon,DynamicIcon,MessageIcon,HistoryIcon,CollectionIcon,TVIcon,DownloadIcon,UploadSubmissionIcon,FireIcon,UPIcon,ChangeIcon,PlayIcon}
+export {VipIcon,DynamicIcon,MessageIcon,HistoryIcon,CollectionIcon,TVIcon,DownloadIcon,
+        UploadSubmissionIcon,FireIcon,UPIcon,ChangeIcon,PlayIcon,DmCtrlIcon,DmSettingIcon,
+        DmTextSettingIcon
+}

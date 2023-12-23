@@ -230,3 +230,9 @@ a {
 body span, body svg {
     color: inherit;
 }
+
+input{
+    background:none;
+    outline:none;
+    border:none;
+}

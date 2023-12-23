@@ -2,6 +2,7 @@ import Main from "@/components/Main.jsx";
 import DynamicHeroIcon from "@/components/Icon.jsx";
 import {useEffect, useState} from "react";
 import Player from "@/components/Player.jsx";
+import SendInput from "@/components/SendInput.jsx";
 
 const Detail = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth*0.6);
@@ -77,12 +78,32 @@ const Detail = () => {
                             <div className={`w-[64px] h-[64px] absolute right-[34px] bottom-[62px]`}>
                                 <DynamicHeroIcon icon={'PlayIcon'} width={64} height={64}/>
                             </div>
-                            {/* 文字 */}
-                            <div>
-                                {/* TODO:  */}
-                                <div className={'flex'}>
-                                    <div></div>
-                                    <div></div>
+                            {/* 底部导航栏 */}
+                            <div className={'pl-[12px] h-[46px]'}>
+                                {/* 控制台 */}
+                                <div className={'flex justify-between items-center h-full'} style={{padding: '0 12px 0 20px'}}>
+                                    {/* 文字区 */}
+                                    <div className={'text-[13px] text-[#61666d] mr-[24px]'}>
+                                        <span>42人正在看，已装填124弹幕</span>
+                                    </div>
+                                    {/* 控制区 */}
+                                    <div className={'flex items-center flex-auto'}>
+                                        <DynamicHeroIcon icon={'DmCtrlIcon'} fill={'#61666d'} width={24} height={24} className={'mr-[12px] cursor-pointer'}/>
+                                        <DynamicHeroIcon icon={'DmSettingIcon'} fill={'#61666d'} width={24} height={24} className={'mr-[12px] cursor-pointer'}/>
+                                        <div className={'flex'}>
+                                            <SendInput
+                                                className={'h-[30px] bg-[#f1f2f3] rounded-[6px] cursor-pointer text-[#9499a0] flex-1'}
+                                                icon={{name:'DmTextSettingIcon',width:24,height:24,fill:'#000'}}
+                                                input={{placeholder:'发弹幕',width:'100%',height:'100%',styles: {minWidth: '100px'} }}
+                                                style={{width: 'calc(100% - 72px)'}}
+                                            >
+                                                <span className={'text-[13px] text-[#9499a0]'}>弹幕礼仪 ></span>
+                                            </SendInput>
+                                            <div className={'h-full w-[62px]'}>
+                                                发送
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

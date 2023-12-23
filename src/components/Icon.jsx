@@ -11,7 +11,7 @@ const DynamicHeroIcon = ({fill='none',width=20,height=20,...props}) => {
     return (
         <>
             {/* eslint-disable-next-line react/prop-types*/}
-            <TheIcon className={props.className} width={width} height={height} fill={fill} aria-hidden="true" />
+            {props.icon && <TheIcon className={`${props.className}`} fill={fill} width={width} height={height}/>}
         </>
     )
 }
