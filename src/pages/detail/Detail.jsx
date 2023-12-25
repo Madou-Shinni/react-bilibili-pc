@@ -51,15 +51,14 @@ const Detail = () => {
                                 1.2w
                             </span>
                             <span className={'flex items-center mr-[12px]'}>
-                                <DynamicHeroIcon icon={'PlayIcon'} width={18} height={18} className={'mr-[4px]'}/>
+                                <DynamicHeroIcon icon={'DmCountIcon'} width={18} height={18} className={'mr-[4px]'}/>
                                 131
                             </span>
                             <span className={'flex items-center mr-[12px]'}>
-                                <DynamicHeroIcon icon={'PlayIcon'} width={18} height={18} className={'mr-[4px]'}/>
                                 2023-12-14 14:35:43
                             </span>
                             <span className={'flex items-center mr-[12px]'}>
-                                <DynamicHeroIcon icon={'PlayIcon'} width={18} height={18} className={'mr-[4px]'}/>
+                                <DynamicHeroIcon icon={'ExclamationCircleIcon'} width={18} height={18} className={'mr-[4px]'}/>
                                 未经作者允许禁止转载
                             </span>
                         </div>
@@ -72,7 +71,7 @@ const Detail = () => {
                         <div className={'flex flex-col'}>
                             {/* 播放器 */}
                             <div className={'flex-1'}>
-                                <Player width={'100%'} height={'100%'} />
+                                <Player videoUrl={'http://example.com/flv/video.flv'} width={'100%'} height={'100%'} />
                             </div>
                             {/* 播放按钮 */}
                             <div className={`w-[64px] h-[64px] absolute right-[34px] bottom-[62px]`}>
@@ -90,17 +89,17 @@ const Detail = () => {
                                     <div className={'flex items-center flex-auto'}>
                                         <DynamicHeroIcon icon={'DmCtrlIcon'} fill={'#61666d'} width={24} height={24} className={'mr-[12px] cursor-pointer'}/>
                                         <DynamicHeroIcon icon={'DmSettingIcon'} fill={'#61666d'} width={24} height={24} className={'mr-[12px] cursor-pointer'}/>
-                                        <div className={'flex'}>
+                                        <div className={'flex flex-1'}>
                                             <SendInput
-                                                className={'h-[30px] bg-[#f1f2f3] rounded-[6px] cursor-pointer text-[#9499a0] flex-1'}
+                                                className={'h-[30px] bg-[#f1f2f3] rounded-[6px] cursor-pointer text-[#9499a0] flex-1 text-[13px]'}
                                                 icon={{name:'DmTextSettingIcon',width:24,height:24,fill:'#000'}}
-                                                input={{placeholder:'发弹幕',width:'100%',height:'100%',styles: {minWidth: '100px'} }}
+                                                input={{placeholder:'发弹幕',width:'100%',height:'28px',styles: {minWidth: '100px',height: '30px'}}}
                                                 style={{width: 'calc(100% - 72px)'}}
                                             >
-                                                <span className={'text-[13px] text-[#9499a0]'}>弹幕礼仪 ></span>
+                                                <span className={'text-[#9499a0] leading-[28px] shrink-[0] w-auto'}>弹幕礼仪 ></span>
                                             </SendInput>
-                                            <div className={'h-full w-[62px]'}>
-                                                发送
+                                            <div className={'h-full w-[62px] cursor-pointer text-center bg-[#00aeec] rounded-r-[8px] rounded-r-b-[8px]'}>
+                                                <span className={'text-[13px] text-[#fff] leading-[28px]'}>发送</span>
                                             </div>
                                         </div>
                                     </div>
@@ -108,6 +107,27 @@ const Detail = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+                {/* 活动区 */}
+                <div className={'flex items-center'}>
+                    <ul className={'flex items-center px-[10px] text-[13px]'}>
+                        <li className={'flex items-center w-[92px] cursor-pointer'}>
+                            <DynamicHeroIcon icon={'HandThumbUpIcon'} fill={'#61666d'} width={40} height={40} className={'mr-[4px]'}/>
+                            <span>7.5万</span>
+                        </li>
+                        <li className={'flex items-center w-[92px] cursor-pointer'}>
+                            <DynamicHeroIcon icon={'DmPushGoldIcon'} fill={'#61666d'} width={40} height={40} className={'mr-[4px]'}/>
+                            <span>4809</span>
+                        </li>
+                        <li className={'flex items-center w-[92px] cursor-pointer'}>
+                            <DynamicHeroIcon icon={'StarIcon'} fill={'#61666d'} width={40} height={40} className={'mr-[4px]'}/>
+                            <span>1.1万</span>
+                        </li>
+                        <li className={'flex items-center w-[92px] cursor-pointer'}>
+                            <DynamicHeroIcon icon={'ShareIcon'} fill={'#61666d'} width={40} height={40} className={'mr-[4px]'}/>
+                            <span>1182</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
             {/* right */}

@@ -13,9 +13,11 @@ import PlayIcon from './play.svg?react'
 import DmCtrlIcon from './dm-ctrl.svg?react'
 import DmSettingIcon from './dm-setting.svg?react'
 import DmTextSettingIcon from './dm-text-setting.svg?react'
+import DmCountIcon from './dm-count.svg?react'
+import DmPushGoldIcon from './dm-push-gold.svg?react'
 
 
 export {VipIcon,DynamicIcon,MessageIcon,HistoryIcon,CollectionIcon,TVIcon,DownloadIcon,
         UploadSubmissionIcon,FireIcon,UPIcon,ChangeIcon,PlayIcon,DmCtrlIcon,DmSettingIcon,
-        DmTextSettingIcon
+        DmTextSettingIcon,DmCountIcon,DmPushGoldIcon
 }

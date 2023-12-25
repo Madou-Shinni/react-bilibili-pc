@@ -11,7 +11,7 @@ const SendInput = ({
         <div className={`${icon.name === '' && 'hidden'} mr-[8px]`}>
             <DynamicHeroIcon className={`${icon.hidden && 'hidden'}`} fill={icon.fill} icon={icon.name} width={icon.width} height={icon.height}/>
         </div>
-        <input width={input.width} height={input.height} type="text" placeholder={input.placeholder} style={input.styles}/>
+        <input style={{width:input.width,height:input.height,lineHeight:input.height}} type="text" placeholder={input.placeholder}/>
         {children}
     </div>
 }
