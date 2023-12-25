@@ -11,6 +11,7 @@ import 'swiper/css';
 SwiperCore.use([Autoplay]);
 
 const MainBody = () => {
+    const videoList = mainBody
     return <main className={'block box-border relative'}>
         {/* 内容区 */}
         <div className={`grid grid-cols-5 md:grid-cols-4 gap-[20px] box-border`}>
@@ -25,8 +26,8 @@ const MainBody = () => {
                 </Swiper>
             </div>
             {
-                mainBody.map((item, index) => (
-                    <BodyContent key={item.id} icon={item.icon}/>
+                videoList.map((item, index) => (
+                    <BodyContent videoId={item.id} key={item.id} icon={item.icon}/>
                 ))
             }
             {/* 换一批 */}
@@ -56,10 +57,10 @@ const SwiperWrapper = (props) => {
     </div>
 }
 
-const BodyContent = (props) => {
+const BodyContent = ({videoId=1,...props}) => {
     return <div className={'flex flex-col'}>
         {/* 图 */}
-        <a href="#" className={'w-full h-full'}>
+        <a href={"/video/"+videoId} className={'w-full h-full'}>
             <picture className={'object-cover'}>
                 <img src={Img1} alt="" className={'block rounded-[6px] w-full h-full object-cover'}/>
             </picture>

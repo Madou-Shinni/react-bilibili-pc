@@ -18,7 +18,7 @@ const Router = React.memo(()=>{
             },
             {
                 path:'*',
-                element: <Navigate to={'/video/1'}/>
+                element: <Navigate to={'/'}/>
             },
         ]
     )
