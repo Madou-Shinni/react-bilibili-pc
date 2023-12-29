@@ -3,6 +3,9 @@ import DynamicHeroIcon from "@/components/Icon.jsx";
 import {useEffect, useState} from "react";
 import Player from "@/components/Player.jsx";
 import SendInput from "@/components/SendInput.jsx";
+import Avatar from "@/assets/avatar.avif";
+import {githubLink} from "@/constants/target_link.js";
+import {danmuData} from "@/constants/danmu.js";
 
 const Detail = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth*0.6);
@@ -58,7 +61,8 @@ const Detail = () => {
                                 2023-12-14 14:35:43
                             </span>
                             <span className={'flex items-center mr-[12px]'}>
-                                <DynamicHeroIcon icon={'ExclamationCircleIcon'} width={18} height={18} className={'mr-[4px]'}/>
+                                <DynamicHeroIcon icon={'ExclamationCircleIcon'} width={18} height={18}
+                                                 className={'mr-[4px]'}/>
                                 未经作者允许禁止转载
                             </span>
                         </div>
@@ -68,10 +72,10 @@ const Detail = () => {
                 <div className={'relative'}>
                     <div className={'relative w-full h-full'}>
                         {/* 播放器区域 */}
-                        <div className={'flex flex-col'}>
+                        <div className={'flex flex-col shadow'}>
                             {/* 播放器 */}
                             <div className={'flex-1'}>
-                                <Player videoUrl={'http://example.com/flv/video.flv'} width={'100%'} height={'100%'} />
+                                <Player videoUrl={'http://example.com/flv/video.flv'} width={'100%'} height={'100%'}/>
                             </div>
                             {/* 播放按钮 */}
                             <div className={`w-[64px] h-[64px] absolute right-[34px] bottom-[62px]`}>
@@ -80,25 +84,34 @@ const Detail = () => {
                             {/* 底部导航栏 */}
                             <div className={'pl-[12px] h-[46px]'}>
                                 {/* 控制台 */}
-                                <div className={'flex justify-between items-center h-full'} style={{padding: '0 12px 0 20px'}}>
+                                <div className={'flex justify-between items-center h-full'}
+                                     style={{padding: '0 12px 0 20px'}}>
                                     {/* 文字区 */}
                                     <div className={'text-[13px] text-[#61666d] mr-[24px]'}>
                                         <span>42人正在看，已装填124弹幕</span>
                                     </div>
                                     {/* 控制区 */}
                                     <div className={'flex items-center flex-auto'}>
-                                        <DynamicHeroIcon icon={'DmCtrlIcon'} fill={'#61666d'} width={24} height={24} className={'mr-[12px] cursor-pointer'}/>
-                                        <DynamicHeroIcon icon={'DmSettingIcon'} fill={'#61666d'} width={24} height={24} className={'mr-[12px] cursor-pointer'}/>
+                                        <DynamicHeroIcon icon={'DmCtrlIcon'} fill={'#61666d'} width={24} height={24}
+                                                         className={'mr-[12px] cursor-pointer'}/>
+                                        <DynamicHeroIcon icon={'DmSettingIcon'} fill={'#61666d'} width={24} height={24}
+                                                         className={'mr-[12px] cursor-pointer'}/>
                                         <div className={'flex flex-1'}>
                                             <SendInput
                                                 className={'h-[30px] bg-[#f1f2f3] rounded-[6px] cursor-pointer text-[#9499a0] flex-1 text-[13px]'}
-                                                icon={{name:'DmTextSettingIcon',width:24,height:24,fill:'#000'}}
-                                                input={{placeholder:'发弹幕',width:'100%',height:'28px',styles: {minWidth: '100px',height: '30px'}}}
+                                                icon={{name: 'DmTextSettingIcon', width: 24, height: 24, fill: '#000'}}
+                                                input={{
+                                                    placeholder: '发弹幕',
+                                                    width: '100%',
+                                                    height: '28px',
+                                                    styles: {minWidth: '100px', height: '30px'}
+                                                }}
                                                 style={{width: 'calc(100% - 72px)'}}
                                             >
                                                 <span className={'text-[#9499a0] leading-[28px] shrink-[0] w-auto'}>弹幕礼仪 ></span>
                                             </SendInput>
-                                            <div className={'h-full w-[62px] cursor-pointer text-center bg-[#00aeec] rounded-r-[8px] rounded-r-b-[8px]'}>
+                                            <div
+                                                className={'h-full w-[62px] cursor-pointer text-center bg-[#00aeec] rounded-r-[8px] rounded-r-b-[8px]'}>
                                                 <span className={'text-[13px] text-[#fff] leading-[28px]'}>发送</span>
                                             </div>
                                         </div>
@@ -109,30 +122,80 @@ const Detail = () => {
                     </div>
                 </div>
                 {/* 活动区 */}
-                <div className={'flex items-center'}>
+                <div className={'flex items-center pt-[16px]'}>
                     <ul className={'flex items-center px-[10px] text-[13px]'}>
                         <li className={'flex items-center w-[92px] cursor-pointer'}>
-                            <DynamicHeroIcon icon={'HandThumbUpIcon'} fill={'#61666d'} width={40} height={40} className={'mr-[4px]'}/>
+                            <DynamicHeroIcon icon={'LikeIcon'} fill={'#61666d'} width={28} height={28}
+                                             className={'mr-[4px]'}/>
                             <span>7.5万</span>
                         </li>
                         <li className={'flex items-center w-[92px] cursor-pointer'}>
-                            <DynamicHeroIcon icon={'DmPushGoldIcon'} fill={'#61666d'} width={40} height={40} className={'mr-[4px]'}/>
+                            <DynamicHeroIcon icon={'DmPushGoldIcon'} fill={'#61666d'} width={28} height={28}
+                                             className={'mr-[4px]'}/>
                             <span>4809</span>
                         </li>
                         <li className={'flex items-center w-[92px] cursor-pointer'}>
-                            <DynamicHeroIcon icon={'StarIcon'} fill={'#61666d'} width={40} height={40} className={'mr-[4px]'}/>
+                            <DynamicHeroIcon icon={'StarIcon'} fill={'#61666d'} width={28} height={28}
+                                             className={'mr-[4px]'}/>
                             <span>1.1万</span>
                         </li>
                         <li className={'flex items-center w-[92px] cursor-pointer'}>
-                            <DynamicHeroIcon icon={'ShareIcon'} fill={'#61666d'} width={40} height={40} className={'mr-[4px]'}/>
+                            <DynamicHeroIcon icon={'ShareIcon'} fill={'#61666d'} width={28} height={28}
+                                             className={'mr-[4px]'}/>
                             <span>1182</span>
                         </li>
                     </ul>
                 </div>
+                <br/>
             </div>
             {/* right */}
-            <div>
-
+            <div className={'w-[350px] ml-[30px] relative'}>
+                {/* up信息 */}
+                <div className={'flex items-center h-[104px]'}>
+                    {/* left */}
+                    <div className={'flex justify-center items-center w-[80px] h-[80px] overflow-hidden'}>
+                        <a href={githubLink}>
+                            <img src={Avatar} alt="" className={'w-full h-full rounded-[50%] object-cover'}/>
+                        </a>
+                    </div>
+                    {/* right */}
+                    <div className={'ml-[12px]'}>
+                        <div className={'flex flex-col'}>
+                            <a href="#" className={'text-[16px] text-[#000]'}>ricardo</a>
+                            <a href={githubLink} target="_blank" className={'text-[13px] text-[#9499a0]'}>github:
+                                https://github.com/Madou-Shinni</a>
+                        </div>
+                    </div>
+                </div>
+                {/* 弹幕列表 */}
+                <div className={'min-h-[44px]'}>
+                    <div className={'w-full h-full'}>
+                        <div className={'w-full h-full bg-[#f1f2f3] px-[10px] rounded-[10px]'}>
+                            <span className={'leading-[44px]'}>弹幕列表</span>
+                        </div>
+                        <div className={'flex flex-col w-full px-[10px] mt-[5px]  h-[510px] overflow-hidden'}>
+                            {/* header */}
+                            <div className={'flex justify-between items-center text-[13px]'}>
+                                <span>时间</span>
+                                <span>弹幕内容</span>
+                                <span>发送时间</span>
+                            </div>
+                            {/* list */}
+                            {
+                                danmuData.map((item, index) => (
+                                    index < 17 && <div key={item.id} className={'flex justify-between items-center h-[32px] text-[13px] text-[#61666d]'}>
+                                        <span>{item.createAt}</span>
+                                        <span>{item.content}</span>
+                                        <span>{item.createAt}</span>
+                                    </div>
+                                ))
+                            }
+                            <div className={'w-full h-[42px] rounded-[6px] cursor-pointer leading-[42px] text-[13px] text-[#61666d] text-center bg-[#f1f2f3]'}>
+                                查看历史弹幕
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </Main>;

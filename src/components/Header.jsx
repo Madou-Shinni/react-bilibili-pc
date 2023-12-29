@@ -1,7 +1,7 @@
 import Logo from "../assets/bilibili.svg?react";
 import SearchIcon from "../assets/search.svg?react";
 import Avatar from "../assets/avatar.avif";
-import {headerleft, headerright} from "../contants/data.js";
+import {headerleft, headerright} from "../constants/data.js";
 import styles from "../style.js";
 import DynamicHeroIcon from "./Icon.jsx";
 

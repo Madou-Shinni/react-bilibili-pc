@@ -1,6 +1,6 @@
 import DynamicHeroIcon from "../../../components/Icon.jsx";
 import DynamicImg from '../../../assets/667cb1473c000e6188eccceb42118365ad265bb4.jpg'
-import {mainNavbarMid, mainNavbarRight} from "../../../contants/data.js";
+import {mainNavbarMid, mainNavbarRight} from "../../../constants/data.js";
 
 const MainNavbar = () => {
     return <div className={`flex items-center my-0 w-full h-[140px]
