@@ -50,7 +50,9 @@ const Header = (props) => {
 const LeftMenus = (props) => {
     switch (props.index) {
         case 0:
-            return <Logo className={'w-[64px] h-[32px] mr-[10px]'} fill={'#00AEEC'}/>
+            return <a className={'flex items-center'} href="/">
+                <Logo className={'w-[64px] h-[32px] mr-[10px]'} fill={'#00AEEC'}/>
+            </a>
         case props.length-1:
             return <div className={'w-full h-full flex items-center'}>
                 <DynamicHeroIcon className={'mr-[5px]'} icon={props.icon} width={props.width} height={props.height}/>

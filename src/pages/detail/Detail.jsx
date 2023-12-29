@@ -6,16 +6,15 @@ import SendInput from "@/components/SendInput.jsx";
 import Avatar from "@/assets/avatar.avif";
 import {githubLink} from "@/constants/target_link.js";
 import {danmuData} from "@/constants/danmu.js";
+import BulletScreen,{StyledBullet} from "rc-bullets";
+const headUrl='https://zerosoul.github.io/rc-bullets/assets/img/heads/girl.jpg';
 
 const Detail = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth*0.6);
     const [windowHeight, setWindowHeight] = useState(window.innerHeight*0.45);
+    // 服务端推送弹幕数据
+    const [currentDanmuData, setCurrentDanmuData] = useState([])
     const leftContainerDynamicWidth = windowWidth
-    const playerDynamicStyles = {
-        width: windowWidth,
-        height: windowHeight
-    }
-    // console.log(playerDynamicStyles)
     useEffect(() => {
         // 定义一个事件处理函数，用于更新窗口大小
         const handleResize = () => {
@@ -30,7 +29,8 @@ const Detail = () => {
             setWindowWidth(width);
             setWindowHeight(height);
         };
-
+        // 模拟弹幕初始化数据
+        setCurrentDanmuData(danmuData)
         // 监听窗口大小变化，调用事件处理函数
         window.addEventListener('resize', handleResize);
 
@@ -39,6 +39,51 @@ const Detail = () => {
             window.removeEventListener('resize', handleResize);
         };
     }, []); // 注意，空数组表示只在组件挂载和卸载时执行 useEffect
+
+    // 弹幕屏幕
+    const [screen, setScreen] = useState(null);
+    // 弹幕内容
+    const [bullet, setBullet] = useState('');
+    useEffect(() => {
+        // 给页面中某个元素初始化弹幕屏幕，一般为一个大区块。此处的配置项全局生效
+        let s = new BulletScreen('.screen',{duration:20});
+        // or
+        // let s=new BulletScreen(document.querySelector('.screen));
+        setScreen(s);
+    }, []);
+    // 弹幕内容输入事件处理
+    const handleChange = ({ target: { value } }) => {
+        setBullet(value);
+    };
+    // 发送弹幕
+    const handleSend = () => {
+        if (bullet) {
+            // or 使用 StyledBullet
+            screen.push(
+                <StyledBullet
+                    // head={headUrl}
+                    msg={bullet}
+                    backgroundColor={'#fff'}
+                    size='small'
+                />
+            );
+        }
+    };
+
+    useEffect(() => {
+        if (currentDanmuData.length > 0) {
+            currentDanmuData.forEach(item => {
+                screen && screen.push(
+                    <StyledBullet
+                        // head={headUrl}
+                        msg={item.content}
+                        backgroundColor={'#fff'}
+                        size='small'
+                    />
+                );
+            })
+        }
+    },[currentDanmuData])
 
     return <Main>
         <div className={'flex w-full h-full relative'}>
@@ -74,7 +119,7 @@ const Detail = () => {
                         {/* 播放器区域 */}
                         <div className={'flex flex-col shadow'}>
                             {/* 播放器 */}
-                            <div className={'flex-1'}>
+                            <div className={'flex-1 screen overflow-hidden'}>
                                 <Player videoUrl={'http://example.com/flv/video.flv'} width={'100%'} height={'100%'}/>
                             </div>
                             {/* 播放按钮 */}
@@ -104,14 +149,18 @@ const Detail = () => {
                                                     placeholder: '发弹幕',
                                                     width: '100%',
                                                     height: '28px',
-                                                    styles: {minWidth: '100px', height: '30px'}
+                                                    styles: {minWidth: '100px', height: '30px'},
+                                                    value: bullet,
+                                                    onChange: handleChange
                                                 }}
                                                 style={{width: 'calc(100% - 72px)'}}
                                             >
                                                 <span className={'text-[#9499a0] leading-[28px] shrink-[0] w-auto'}>弹幕礼仪 ></span>
                                             </SendInput>
                                             <div
-                                                className={'h-full w-[62px] cursor-pointer text-center bg-[#00aeec] rounded-r-[8px] rounded-r-b-[8px]'}>
+                                                className={'h-full w-[62px] cursor-pointer text-center bg-[#00aeec] rounded-r-[8px] rounded-r-b-[8px]'}
+                                                onClick={handleSend}
+                                            >
                                                 <span className={'text-[13px] text-[#fff] leading-[28px]'}>发送</span>
                                             </div>
                                         </div>
