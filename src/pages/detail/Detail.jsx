@@ -29,8 +29,6 @@ const Detail = () => {
             setWindowWidth(width);
             setWindowHeight(height);
         };
-        // 模拟弹幕初始化数据
-        setCurrentDanmuData(danmuData)
         // 监听窗口大小变化，调用事件处理函数
         window.addEventListener('resize', handleResize);
 
@@ -46,10 +44,12 @@ const Detail = () => {
     const [bullet, setBullet] = useState('');
     useEffect(() => {
         // 给页面中某个元素初始化弹幕屏幕，一般为一个大区块。此处的配置项全局生效
-        let s = new BulletScreen('.screen',{duration:20});
+        let s = new BulletScreen('.screen',{duration:8});
         // or
         // let s=new BulletScreen(document.querySelector('.screen));
         setScreen(s);
+        // 模拟弹幕初始化数据
+        setCurrentDanmuData(danmuData)
     }, []);
     // 弹幕内容输入事件处理
     const handleChange = ({ target: { value } }) => {
@@ -73,14 +73,18 @@ const Detail = () => {
     useEffect(() => {
         if (currentDanmuData.length > 0) {
             currentDanmuData.forEach(item => {
-                screen && screen.push(
-                    <StyledBullet
-                        // head={headUrl}
-                        msg={item.content}
-                        backgroundColor={'#fff'}
-                        size='small'
-                    />
-                );
+                // 弹幕随机推送
+                const randomValue = Math.floor(Math.random() * (8000 - 100 + 1)) + 100;
+                setTimeout(()=>{
+                    screen && screen.push(
+                        <StyledBullet
+                            // head={headUrl}
+                            msg={item.content}
+                            backgroundColor={'#fff'}
+                            size='small'
+                        />
+                    );
+                }, randomValue)
             })
         }
     },[currentDanmuData])
