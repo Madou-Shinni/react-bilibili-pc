@@ -66,7 +66,7 @@ const Detail = () => {
                 <StyledBullet
                     // head={headUrl}
                     msg={bullet}
-                    backgroundColor={'#fff'}
+                    backgroundColor={'#e5b7b7'}
                     size='small'
                 />
             );
