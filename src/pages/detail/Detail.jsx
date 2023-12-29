@@ -10,8 +10,11 @@ import BulletScreen,{StyledBullet} from "rc-bullets";
 const headUrl='https://zerosoul.github.io/rc-bullets/assets/img/heads/girl.jpg';
 
 const Detail = () => {
+    // 动态计算窗口大小
     const [windowWidth, setWindowWidth] = useState(window.innerWidth*0.6);
     const [windowHeight, setWindowHeight] = useState(window.innerHeight*0.45);
+    // 设置播放状态
+    const [played, setPlayed] = useState(false);
     // 服务端推送弹幕数据
     const [currentDanmuData, setCurrentDanmuData] = useState([])
     const leftContainerDynamicWidth = windowWidth
@@ -67,6 +70,8 @@ const Detail = () => {
                     size='small'
                 />
             );
+            // 清空输入框
+            setBullet('');
         }
     };
 
@@ -74,7 +79,7 @@ const Detail = () => {
         if (currentDanmuData.length > 0) {
             currentDanmuData.forEach(item => {
                 // 弹幕随机推送
-                const randomValue = Math.floor(Math.random() * (8000 - 100 + 1)) + 100;
+                let randomValue = Math.floor(Math.random() * (1000000 - 100 + 1)) + 100;
                 setTimeout(()=>{
                     screen && screen.push(
                         <StyledBullet
@@ -123,11 +128,11 @@ const Detail = () => {
                         {/* 播放器区域 */}
                         <div className={'flex flex-col shadow'}>
                             {/* 播放器 */}
-                            <div className={'flex-1 screen overflow-hidden'}>
-                                <Player videoUrl={'http://example.com/flv/video.flv'} width={'100%'} height={'100%'}/>
+                            <div className={'flex-1 screen overflow-hidden'} onClick={() => setPlayed(!played)}>
+                                <Player play={played} videoUrl={'http://localhost:9090/video'} width={'100%'} height={'100%'}/>
                             </div>
                             {/* 播放按钮 */}
-                            <div className={`w-[64px] h-[64px] absolute right-[34px] bottom-[62px]`}>
+                            <div className={`w-[64px] h-[64px] absolute right-[34px] bottom-[62px] ${played && 'hidden'}`}>
                                 <DynamicHeroIcon icon={'PlayIcon'} width={64} height={64}/>
                             </div>
                             {/* 底部导航栏 */}

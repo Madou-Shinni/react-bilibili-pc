@@ -1,16 +1,16 @@
-import React, { useEffect, useRef } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import flvjs from 'flv.js';
 
 const videoCover = '/src/assets/swiper-cover.avif'
 
-const Player = ({ videoUrl, width, height }) => {
+const Player = ({ videoUrl, width, height,play=false }) => {
     const videoRef = useRef(null);
     const flvPlayerRef = useRef(null);
 
     useEffect(() => {
         // 创建 flv.js 播放器实例
         flvPlayerRef.current = flvjs.createPlayer({
-            type: 'flv',
+            type: 'mp4',
             url: videoUrl,
             isLive: true,
         });
@@ -28,6 +28,14 @@ const Player = ({ videoUrl, width, height }) => {
             }
         };
     }, [videoUrl]);
+
+    useEffect(()=>{
+        if (play){
+            flvPlayerRef.current.play()
+        }else {
+            flvPlayerRef.current.pause()
+        }
+    },[play])
 
     return (
         <video
